@@ -4,7 +4,7 @@ import gspread
 class DataStore:
     _data = []
     worksheet_name = "web3-bot"
-    gc = gspread.oauth(credentials_filename="credential.json")
+    gc: gspread.auth.Client = gspread.oauth(credentials_filename="credential.json")
     ws: gspread.Worksheet
 
     try:
